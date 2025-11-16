@@ -161,9 +161,7 @@ export class FCMPlugin {
      * @returns {Promise<boolean>} Returns a Promise that resolves with the permission status
      */
     public requestPushPermission(options?: IRequestPushPermissionOptions): Promise<boolean> {
-        if (window.cordova.platformId !== 'ios') {
-            return Promise.resolve(true)
-        }
+
         const ios9SupportTimeout = options?.ios9Support?.timeout ?? 10
         const ios9SupportInterval = options?.ios9Support?.interval ?? 0.3
 
